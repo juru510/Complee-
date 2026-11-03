@@ -528,6 +528,33 @@
       font-size: 0.88rem;
       color: var(--text-secondary);
     }
+    .laddering-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.ladder-image-card {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.ladder-image-card img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  display: block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 860px) {
+  .laddering-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
     /* 07: CREATIVE MATRIX */
     .table-responsive {
@@ -856,36 +883,47 @@
   </div>
 </section>
 
-    <!-- 06: ABSTRACT LADDERING -->
+<!-- 06: ABSTRACT LADDERING -->
 <section class="apple-section" id="laddering">
-    <span class="section-eyebrow">06 / Wk8 Assignment</span>
-    <h2>Abstract Laddering</h2>
+  <span class="section-eyebrow">06 / Wk8 Assignment</span>
+  <h2>Abstract Laddering</h2>
+  
+  <div class="laddering-grid">
+    <!-- Left Column: Image Card -->
+    <div class="bento-card ladder-image-card">
+      <img src="assets/abstract laddering.png" alt="Abstract Laddering Diagram Tree">
+      <p style="font-size: 0.8rem; color: var(--text-secondary); text-align: center; margin: 0;">
+        Figure: Complete HMW Abstract Laddering Tree
+      </p>
+    </div>
 
+    <!-- Right Column: Text Breakdown Cards -->
     <div class="ladder-container">
-    <!-- WHY (Need) -->
-    <div class="bento-card ladder-step">
-      <span class="ladder-level why">WHY (Need)</span>
-      <div class="ladder-content">
-        <h4>Support healthier lifestyles & reduce daily pressure</h4>
-        <p>Give busy individuals free time after cooking and eliminate daily meal prep fatigue so eating at home remains cheap, healthy, and effortless.</p>
+      <!-- WHY (Need) -->
+      <div class="bento-card ladder-step">
+        <span class="ladder-level why">WHY (Need)</span>
+        <div class="ladder-content">
+          <h4>Support healthier lifestyles & reduce daily pressure</h4>
+          <p>Give busy individuals free time after cooking and eliminate daily meal prep fatigue so eating at home remains cheap, healthy, and effortless.</p>
+        </div>
       </div>
-    </div>
 
-    <!-- WHAT (System) -->
-    <div class="bento-card ladder-step">
-      <span class="ladder-level what">WHAT (System)</span>
-      <div class="ladder-content">
-        <h4>Keep countertops clean and ready for use anytime</h4>
-        <p>Prevent scrap accumulation and messy seams on surfaces by building immediate waste disposal directly into the workspace workflow.</p>
+      <!-- WHAT (System) -->
+      <div class="bento-card ladder-step">
+        <span class="ladder-level what">WHAT (System)</span>
+        <div class="ladder-content">
+          <h4>Keep countertops clean and ready for use anytime</h4>
+          <p>Prevent scrap accumulation and messy seams on surfaces by building immediate waste disposal directly into the workspace workflow.</p>
+        </div>
       </div>
-    </div>
 
-    <!-- HOW (Solution) -->
-    <div class="bento-card ladder-step">
-      <span class="ladder-level how">HOW (Solution)</span>
-      <div class="ladder-content">
-        <h4>Integrated counter-to-trash sliding mechanism</h4>
-        <p>A dedicated scrap area next to the cutting board allowing zero-step sweep of food waste into a concealed, easily removable collection bin.</p>
+      <!-- HOW (Solution) -->
+      <div class="bento-card ladder-step">
+        <span class="ladder-level how">HOW (Solution)</span>
+        <div class="ladder-content">
+          <h4>Integrated counter-to-trash sliding mechanism</h4>
+          <p>A dedicated scrap area next to the cutting board allowing zero-step sweep of food waste into a concealed, easily removable collection bin.</p>
+        </div>
       </div>
     </div>
   </div>
