@@ -425,6 +425,27 @@
     }
 
     /* 05: USER PERSONA */
+.persona-demographics {
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  text-align: left;
+}
+
+.demo-row {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+}
+
+.demo-row strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
     .persona-grid {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -785,35 +806,55 @@
   </div>
 </section>
 
-    <!-- 05: USER PERSONA (Wk8 Assignment) -->
-    <section class="apple-section" id="persona">
-      <span class="section-eyebrow">05 / Wk8 Assignment</span>
-      <h2>User Persona</h2>
+<!-- 05: USER PERSONA -->
+<section class="apple-section" id="persona">
+  <span class="section-eyebrow">05 / Wk8 Assignment</span>
+  <h2>User Persona</h2>
+  
+  <div class="bento-card persona-grid">
+    <!-- Left Column: Photo & Full Demographics -->
+    <div class="persona-profile">
+      <img src="assets/persona.png" alt="Olivia Wanderbilt Persona">
+      <h3>Olivia Wanderbilt</h3>
       
-      <div class="bento-card persona-grid">
-        <div class="persona-profile">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250" alt="Target Persona">
-          <h3>Taylor Vance, 29</h3>
-          <p style="font-size: 0.8rem; color: var(--text-secondary);">Busy Professional living alone</p>
-          <div class="persona-quote">"I want to cook healthy meals at home, but after a 10-hour workday, spending 30 minutes cleaning counter scraps makes takeout feel like the only realistic choice."</div>
-        </div>
-        <div class="persona-details">
-          <h4>Core Pain Points & Friction</h4>
-          <ul>
-            <li>Exhaustion following post-prep clean-up routines</li>
-            <li>Limited counter space cluttered by food scraps during cooking</li>
-            <li>Guilt over spending money on less-nutritious takeout alternatives</li>
-          </ul>
-
-          <h4>Primary Motivations & Goals</h4>
-          <ul>
-            <li>Maintain a healthy lifestyle within a tight daily schedule</li>
-            <li>Minimize dish & countertop maintenance friction</li>
-            <li>Seamlessly transition from cooking to dining without immediate clutter</li>
-          </ul>
-        </div>
+      <!-- Complete Demographics List -->
+      <div class="persona-demographics">
+        <div class="demo-row"><span>Age</span> <strong>28 Years Old</strong></div>
+        <div class="demo-row"><span>Location</span> <strong>Berkeley, CA</strong></div>
+        <div class="demo-row"><span>Occupation</span> <strong>Marketing</strong></div>
+        <div class="demo-row"><span>Income Level</span> <strong>$82,000 per year</strong></div>
       </div>
-    </section>
+
+      <div class="persona-quote">
+        “It's easy to cleanup 70% of the kitchen but 100% is already too hard on a daily basis”
+      </div>
+    </div>
+
+    <!-- Right Column: Details -->
+    <div class="persona-details">
+      <h4>Background</h4>
+      <ul>
+        <li>Wants to be in charge of what she eats</li>
+        <li>Likes to experiment with new recipes</li>
+        <li>Shares an apartment with her boyfriend</li>
+      </ul>
+
+      <h4>Motivations</h4>
+      <ul>
+        <li>Loves a clean, tidy workspace when cooking</li>
+        <li>Sanitized cooking environment</li>
+        <li>Cooking as much at home as possible</li>
+      </ul>
+
+      <h4>Pain Points</h4>
+      <ul>
+        <li>Hates when food debris ends up in seams and on the floor</li>
+        <li>Lack of motivation for cleanup</li>
+        <li>Unpleasant textures sticking to the countertop</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
     <!-- 06: ABSTRACT LADDERING -->
 <section class="apple-section" id="laddering">
@@ -941,29 +982,29 @@
               <td><strong>1. Scoping & Setup</strong></td>
               <td>Problem formulation, Gallup citations, site framework</td>
               <td>All Members</td>
-              <td>Week 1 - 2</td>
+              <td>Week 8 (10/20)</td>
               <td><span class="status-pill done">Completed</span></td>
             </tr>
             <tr>
               <td><strong>2. User Discovery</strong></td>
               <td>Persona modeling & abstract laddering (Wk8)</td>
               <td>Juan & Lars</td>
-              <td>Week 3 - 4</td>
+              <td>Week 9 (10/27)</td>
               <td><span class="status-pill done">Completed</span></td>
             </tr>
             <tr>
               <td><strong>3. Creative Matrix</strong></td>
               <td>Synthesis matrix & enabler evaluation (Wk9)</td>
               <td>Tala, James & Dylan</td>
-              <td>Week 5 - 6</td>
-              <td><span class="status-pill active">In Progress</span></td>
+              <td>Week 10 (11/3)</td>
+              <td><span class="status-pill done">Completed</span></td>
             </tr>
             <tr>
               <td><strong>4. CAD & Prototype</strong></td>
               <td>Makerspace slider mechanism & component fabrication</td>
               <td>Dylan & James</td>
               <td>Week 7 - 8</td>
-              <td><span class="status-pill upcoming">Upcoming</span></td>
+              <td><span class="status-pill active">In Progress</span></td>
             </tr>
             <tr>
               <td><strong>5. Evaluation & Pitch</strong></td>
