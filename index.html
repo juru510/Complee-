@@ -925,7 +925,149 @@
       background: rgba(255, 255, 255, 0.28);
     }
 
-    /* 11: PROJECT PLAN TABLE */
+    /* ==========================================================================
+       11: MASTER PROJECT PLAN (MILESTONES, WBS, GANTT & RACI)
+       ========================================================================== */
+    .milestone-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .milestone-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.3rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0.6rem;
+    }
+
+    .milestone-date {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .milestone-card h4 {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .milestone-card p {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.42;
+    }
+
+    .wbs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .wbs-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .wbs-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .wbs-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .owner-pill {
+      background: var(--bg-section);
+      color: var(--text-primary);
+      padding: 0.22rem 0.65rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .due-pill {
+      background: rgba(0, 113, 227, 0.08);
+      color: var(--accent-blue);
+      padding: 0.22rem 0.65rem;
+      border-radius: var(--radius-pill);
+    }
+
+    .wbs-list {
+      padding-left: 1.15rem;
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+
+    .wbs-list li {
+      margin-bottom: 0.3rem;
+    }
+
+    .gantt-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      text-align: left;
+    }
+
+    .gantt-table th {
+      padding: 0.75rem 0.6rem;
+      border-bottom: 1px solid var(--border-light);
+      color: var(--text-secondary);
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .gantt-table th:first-child,
+    .gantt-table th:nth-child(2) {
+      text-align: left;
+    }
+
+    .gantt-table td {
+      padding: 0.7rem 0.6rem;
+      border-bottom: 1px solid var(--border-subtle);
+      vertical-align: middle;
+    }
+
+    .gantt-bar {
+      height: 10px;
+      border-radius: var(--radius-pill);
+      background: var(--accent-blue);
+      width: 100%;
+    }
+
+    .gantt-bar.done {
+      background: #2e7d32;
+    }
+
+    .gantt-bar.upcoming {
+      background: rgba(0, 113, 227, 0.35);
+    }
+
     .table-responsive {
       overflow-x: auto;
     }
@@ -1602,83 +1744,344 @@
       </div>
     </section>
 
-    <!-- 11: PROJECT PLAN -->
+    <!-- 11: PROJECT PLAN (WEEKS 10–14) -->
     <section class="apple-section" id="plan">
-      <span class="section-eyebrow">11 / Execution Roadmap</span>
+      <span class="section-eyebrow">11 / Execution Roadmap (Weeks 10–14)</span>
       <h2>Project Plan</h2>
-      
-      <!-- Principles Card -->
+
+      <!-- Overview & Weekly Recurring Cadence -->
       <div class="bento-card" style="margin-bottom: 1.5rem;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.4rem;">
           <div>
-            <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--accent-blue); margin-bottom: 0.4rem;">Project Objectives</h4>
-            <p style="font-size: 0.88rem; color: var(--text-secondary);">Create a working all-in-one prep station to help users easily clean cooking messes while validating fit through human-centered design.</p>
+            <h4 style="font-size: 0.82rem; text-transform: uppercase; color: var(--accent-blue); margin-bottom: 0.4rem;">Master Plan Scope</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">
+              Covers all core deliverables, task breakdowns, milestones, and RACI assignments from <strong>Week 10 (Nov 2)</strong> through <strong>Week 14 Final Submissions (Nov 30 – Dec 4)</strong> under Project Manager <strong>Juan Rubio</strong>.
+            </p>
           </div>
           <div>
-            <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--accent-blue); margin-bottom: 0.4rem;">Procedures & Decision Making</h4>
-            <p style="font-size: 0.88rem; color: var(--text-secondary);">Democratic decision-making; asynchronous and live collaboration via Group Chat, Shared Google Drive, Email, and Zoom.</p>
+            <h4 style="font-size: 0.82rem; text-transform: uppercase; color: var(--accent-blue); margin-bottom: 0.4rem;">Weekly Web Page Updates (Mondays)</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">
+              Led by <strong>Juan</strong> every Monday (Nov 9, 16, 23, 30) to publish updated sketches, slide decks, member responsibilities, VPC alignment, and prototype iterations.
+            </p>
           </div>
           <div>
-            <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--accent-blue); margin-bottom: 0.4rem;">Team Diversity & Risk Mitigation</h4>
-            <p style="font-size: 0.88rem; color: var(--text-secondary);">3 engineering majors (ME & IEOR) lead CAD & Makerspace fabrication in parallel; 2 cognitive science majors lead UX, VPC fit & testing.</p>
+            <h4 style="font-size: 0.82rem; text-transform: uppercase; color: var(--accent-blue); margin-bottom: 0.4rem;">Weekly Progress Reports (Mondays)</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">
+              Tracked weekly against the baseline plan to document milestone completion, flag schedule deviations, execute risk mitigations, and log next steps.
+            </p>
           </div>
         </div>
       </div>
 
-      <!-- Milestone Table -->
-      <div class="bento-card table-responsive" style="padding: 1rem;">
+      <!-- 4-Gate Milestone Summary -->
+      <div class="milestone-grid">
+        <div class="milestone-card">
+          <div>
+            <span class="milestone-date">Milestone 1 • Nov 9</span>
+            <h4 style="margin-top: 0.25rem;">Low-Fi &amp; Test Plan</h4>
+            <p style="margin-top: 0.35rem;">Rapid low-fi prototype built, concept test plan finalized, and Web Update #1 published.</p>
+          </div>
+          <span class="status-pill done" style="width: fit-content;">Completed</span>
+        </div>
+
+        <div class="milestone-card" style="border-color: rgba(0, 113, 227, 0.3);">
+          <div>
+            <span class="milestone-date">Milestone 2 • Nov 16</span>
+            <h4 style="margin-top: 0.25rem;">User Testing &amp; Competitor Study</h4>
+            <p style="margin-top: 0.35rem;">User testing observations synthesized, competitor benchmark submitted, and Web Update #2 live.</p>
+          </div>
+          <span class="status-pill active" style="width: fit-content;">Current Gate</span>
+        </div>
+
+        <div class="milestone-card">
+          <div>
+            <span class="milestone-date">Milestone 3 • Nov 23</span>
+            <h4 style="margin-top: 0.25rem;">Hi-Fi Core &amp; Media Drafts</h4>
+            <p style="margin-top: 0.35rem;">High-fidelity prototype core interactions built, video footage captured, and Web Update #3 posted.</p>
+          </div>
+          <span class="status-pill upcoming" style="width: fit-content;">Upcoming</span>
+        </div>
+
+        <div class="milestone-card">
+          <div>
+            <span class="milestone-date">Milestone 4 • Nov 30</span>
+            <h4 style="margin-top: 0.25rem;">Final Deliverables</h4>
+            <p style="margin-top: 0.35rem;">Final prototype, 3-minute video, project poster, presentation deck, and final webpage submitted.</p>
+          </div>
+          <span class="status-pill upcoming" style="width: fit-content;">Upcoming</span>
+        </div>
+      </div>
+
+      <!-- Work Breakdown Structure (WBS) -->
+      <h3 style="margin-bottom: 1rem;">Deliverable Work Breakdown Structure (WBS)</h3>
+      <div class="wbs-grid">
+        <!-- WBS 1 -->
+        <div class="wbs-card">
+          <div class="wbs-header">
+            <h4>1. Rapid &amp; Low-Fi Prototype(s)</h4>
+            <span class="status-pill done">Completed</span>
+          </div>
+          <div class="wbs-meta">
+            <span class="owner-pill">Owner: Dylan Pearson</span>
+            <span class="due-pill">Due: Nov 9 (Demo Nov 10)</span>
+          </div>
+          <ul class="wbs-list">
+            <li><strong>1.1</strong> Review Week 9 presentation feedback &amp; low-fi specs.</li>
+            <li><strong>1.2</strong> Sketch interactive paper/wireframe layouts &amp; user flows.</li>
+            <li><strong>1.3</strong> Construct physical cardboard/low-fi prototype mockup.</li>
+            <li><strong>1.4</strong> Run internal team walk-through for concept test readiness.</li>
+            <li><strong>1.5</strong> Present low-fi prototype in class for teaching team critique.</li>
+          </ul>
+        </div>
+
+        <!-- WBS 2 -->
+        <div class="wbs-card">
+          <div class="wbs-header">
+            <h4>2. Concept Testing &amp; Competitor Study</h4>
+            <span class="status-pill active">Active</span>
+          </div>
+          <div class="wbs-meta">
+            <span class="owner-pill">Owner: Lars Antoniak</span>
+            <span class="due-pill">Due: Nov 16</span>
+          </div>
+          <ul class="wbs-list">
+            <li><strong>2.1</strong> Finalize Concept Test Plan script &amp; observer/facilitator roles.</li>
+            <li><strong>2.2</strong> Conduct user testing sessions with the rapid low-fi prototype.</li>
+            <li><strong>2.3</strong> Synthesize test observations, feedback &amp; friction points.</li>
+            <li><strong>2.4</strong> Benchmark direct &amp; indirect kitchen competitors and UX gaps.</li>
+            <li><strong>2.5</strong> Compile and submit the Week 11 Competitor Study report.</li>
+          </ul>
+        </div>
+
+        <!-- WBS 3 -->
+        <div class="wbs-card">
+          <div class="wbs-header">
+            <h4>3. Final High-Fidelity Prototype</h4>
+            <span class="status-pill active">In Progress</span>
+          </div>
+          <div class="wbs-meta">
+            <span class="owner-pill">Owner: Dylan Pearson</span>
+            <span class="due-pill">Due: Nov 30</span>
+          </div>
+          <ul class="wbs-list">
+            <li><strong>3.1</strong> Translate user test insights into high-fidelity build specs.</li>
+            <li><strong>3.2</strong> Fabricate high-fidelity physical model &amp; modular components.</li>
+            <li><strong>3.3</strong> Execute mid-fi/hi-fi refinement pass based on GSI feedback.</li>
+            <li><strong>3.4</strong> Complete final finish, assembly tolerances &amp; edge-case testing.</li>
+          </ul>
+        </div>
+
+        <!-- WBS 4 -->
+        <div class="wbs-card">
+          <div class="wbs-header">
+            <h4>4. 3-Minute Video Deliverable</h4>
+            <span class="status-pill upcoming">Scheduled</span>
+          </div>
+          <div class="wbs-meta">
+            <span class="owner-pill">Owner: James Phi</span>
+            <span class="due-pill">Due: Nov 30</span>
+          </div>
+          <ul class="wbs-list">
+            <li><strong>4.1</strong> Write 3-minute script covering problem, testing &amp; solution.</li>
+            <li><strong>4.2</strong> Build shot list &amp; storyboards (hero shots &amp; user tests).</li>
+            <li><strong>4.3</strong> Record voiceover narration and capture product/test footage.</li>
+            <li><strong>4.4</strong> Edit timeline in DaVinci Resolve / Premiere with titles.</li>
+            <li><strong>4.5</strong> Gather team review and render final 1080p video deliverable.</li>
+          </ul>
+        </div>
+
+        <!-- WBS 5 -->
+        <div class="wbs-card">
+          <div class="wbs-header">
+            <h4>5. Project Poster</h4>
+            <span class="status-pill upcoming">Scheduled</span>
+          </div>
+          <div class="wbs-meta">
+            <span class="owner-pill">Owner: Tala Alshalfan</span>
+            <span class="due-pill">Due: Nov 30</span>
+          </div>
+          <ul class="wbs-list">
+            <li><strong>5.1</strong> Outline poster layout (Problem, Insights, Iteration, Impact).</li>
+            <li><strong>5.2</strong> Gather high-res CAD renders, diagrams &amp; before/after sketches.</li>
+            <li><strong>5.3</strong> Draft concise poster copy and clean typographic hierarchy.</li>
+            <li><strong>5.4</strong> Design poster in Figma/Illustrator to showcase dimensions.</li>
+            <li><strong>5.5</strong> Proofread and export high-resolution print-ready PDF.</li>
+          </ul>
+        </div>
+
+        <!-- WBS 6 -->
+        <div class="wbs-card">
+          <div class="wbs-header">
+            <h4>6. Final Project Presentation</h4>
+            <span class="status-pill upcoming">Scheduled</span>
+          </div>
+          <div class="wbs-meta">
+            <span class="owner-pill">Owner: Lars Antoniak &amp; Team</span>
+            <span class="due-pill">Due: Nov 30 / Class Pitch</span>
+          </div>
+          <ul class="wbs-list">
+            <li><strong>6.1</strong> Structure final slide deck arc aligned with course rubric.</li>
+            <li><strong>6.2</strong> Design visual slides highlighting hi-fi prototype &amp; video clips.</li>
+            <li><strong>6.3</strong> Draft speaker notes and divide speaking roles across team.</li>
+            <li><strong>6.4</strong> Rehearse presentation timing and Q&amp;A responses together.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Visual Gantt Chart (Weeks 10–14) -->
+      <div class="bento-card table-responsive" style="padding: 1.4rem; margin-bottom: 1.5rem;">
+        <h3 style="margin-bottom: 0.9rem;">Project Gantt Timeline (Weeks 10–14)</h3>
+        <table class="gantt-table">
+          <thead>
+            <tr>
+              <th style="width: 28%;">Work Package</th>
+              <th style="width: 17%;">Owner</th>
+              <th>W10<br><small>11/2–11/8</small></th>
+              <th>W11<br><small>11/9–11/15</small></th>
+              <th>W12<br><small>11/16–11/22</small></th>
+              <th>W13<br><small>11/23–11/29</small></th>
+              <th>W14<br><small>11/30–12/4</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Rapid &amp; Low-Fi Prototype</strong></td>
+              <td>Dylan</td>
+              <td><div class="gantt-bar done"></div></td>
+              <td><div class="gantt-bar done"></div></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><strong>Concept Testing &amp; Test Plan</strong></td>
+              <td>Lars &amp; Team</td>
+              <td></td>
+              <td><div class="gantt-bar done"></div></td>
+              <td><div class="gantt-bar"></div></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><strong>Competitor Study Report</strong></td>
+              <td>Lars</td>
+              <td></td>
+              <td><div class="gantt-bar done"></div></td>
+              <td><div class="gantt-bar"></div></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><strong>Final Prototype Build</strong></td>
+              <td>Dylan &amp; Team</td>
+              <td></td>
+              <td></td>
+              <td><div class="gantt-bar"></div></td>
+              <td><div class="gantt-bar upcoming"></div></td>
+              <td><div class="gantt-bar upcoming"></div></td>
+            </tr>
+            <tr>
+              <td><strong>3-Min Video Production</strong></td>
+              <td>James</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><div class="gantt-bar upcoming"></div></td>
+              <td><div class="gantt-bar upcoming"></div></td>
+            </tr>
+            <tr>
+              <td><strong>Project Poster Design</strong></td>
+              <td>Tala</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><div class="gantt-bar upcoming"></div></td>
+              <td><div class="gantt-bar upcoming"></div></td>
+            </tr>
+            <tr>
+              <td><strong>Final Presentation Deck</strong></td>
+              <td>Lars &amp; Team</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><div class="gantt-bar upcoming"></div></td>
+              <td><div class="gantt-bar upcoming"></div></td>
+            </tr>
+            <tr>
+              <td><strong>Weekly Web &amp; Progress Reports</strong></td>
+              <td>Juan</td>
+              <td><div class="gantt-bar done"></div></td>
+              <td><div class="gantt-bar done"></div></td>
+              <td><div class="gantt-bar"></div></td>
+              <td><div class="gantt-bar upcoming"></div></td>
+              <td><div class="gantt-bar upcoming"></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Master RACI & Deliverable Schedule Table -->
+      <div class="bento-card table-responsive" style="padding: 1.2rem;">
+        <h3 style="margin-bottom: 0.8rem;">Master Schedule &amp; RACI Responsibility Matrix</h3>
         <table class="plan-table">
           <thead>
             <tr>
-              <th>Phase</th>
-              <th>Key Deliverables</th>
-              <th>Assigned Lead(s)</th>
-              <th>Timeline</th>
+              <th>Work Package / Deliverable</th>
+              <th>Due Date</th>
+              <th>Lead</th>
+              <th>Support</th>
               <th>Status</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><strong>1. Scoping & Problem Framing</strong></td>
-              <td>Problem statement, Gallup/Appetite citations, initial site architecture</td>
+              <td><strong>Rapid &amp; Low-Fi Prototype + Review Report</strong></td>
+              <td>Nov 9 (Demo Nov 10)</td>
+              <td>Dylan Pearson</td>
+              <td>James &amp; Team</td>
+              <td><span class="status-pill done">Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>Web Page Update #1 &amp; Progress Report #1</strong></td>
+              <td>Nov 9</td>
+              <td>Juan Rubio</td>
               <td>All Members</td>
-              <td>Week 8 (10/20)</td>
               <td><span class="status-pill done">Completed</span></td>
             </tr>
             <tr>
-              <td><strong>2. User Discovery & Laddering</strong></td>
-              <td>Olivia Wanderbilt persona, HMW framework & abstract laddering tree</td>
-              <td>Juan & Lars</td>
-              <td>Week 9 (10/27)</td>
-              <td><span class="status-pill done">Completed</span></td>
-            </tr>
-            <tr>
-              <td><strong>3. Creative Matrix & Slides</strong></td>
-              <td>Synthesis matrix, sketches & Wk9 presentation deck</td>
-              <td>Tala, James & Juan</td>
-              <td>Week 10 (11/3)</td>
-              <td><span class="status-pill done">Completed</span></td>
-            </tr>
-            <tr>
-              <td><strong>4. VPC & 3D CAD Renders</strong></td>
-              <td>Value Proposition Canvas priority ranking & multi-angle CAD renders</td>
-              <td>Juan, Lars & Dylan</td>
-              <td>Week 11 (11/10)</td>
-              <td><span class="status-pill done">Completed</span></td>
-            </tr>
-            <tr>
-              <td><strong>5. Makerspace Prototype</strong></td>
-              <td>Elevated deck fabrication, magnetic trays, containers & knife holder</td>
-              <td>Dylan & James</td>
-              <td>Week 12 (11/17)</td>
-              <td><span class="status-pill active">In Progress</span></td>
-            </tr>
-            <tr>
-              <td><strong>6. Evaluation & Final Pitch</strong></td>
-              <td>Usability testing, design iterations, final web update & demo</td>
+              <td><strong>Competitor Study Report &amp; Concept Test Synthesis</strong></td>
+              <td>Nov 16</td>
+              <td>Lars Antoniak</td>
               <td>All Members</td>
-              <td>Week 13 (11/24)</td>
-              <td><span class="status-pill upcoming">Upcoming</span></td>
+              <td><span class="status-pill active">Due Today</span></td>
+            </tr>
+            <tr>
+              <td><strong>Web Page Update #2 &amp; Progress Report #2</strong></td>
+              <td>Nov 16</td>
+              <td>Juan Rubio</td>
+              <td>All Members</td>
+              <td><span class="status-pill active">Due Today</span></td>
+            </tr>
+            <tr>
+              <td><strong>Final Prototype Core Build &amp; Web Update #3</strong></td>
+              <td>Nov 23</td>
+              <td>Dylan &amp; Juan</td>
+              <td>All Members</td>
+              <td><span class="status-pill upcoming">Scheduled</span></td>
+            </tr>
+            <tr>
+              <td><strong>Final Prototype, 3-Min Video, Poster &amp; Deck</strong></td>
+              <td>Nov 30</td>
+              <td>Dylan, James, Tala &amp; Lars</td>
+              <td>All Members</td>
+              <td><span class="status-pill upcoming">Scheduled</span></td>
+            </tr>
+            <tr>
+              <td><strong>Web Page Update #4 &amp; Final Progress Report</strong></td>
+              <td>Nov 30</td>
+              <td>Juan Rubio</td>
+              <td>All Members</td>
+              <td><span class="status-pill upcoming">Scheduled</span></td>
             </tr>
           </tbody>
         </table>
