@@ -107,6 +107,16 @@
       color: var(--text-primary);
     }
 
+    .nav-cta {
+      background-color: var(--accent-blue);
+      color: #ffffff;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
     /* ==========================================================================
        HERO & SHOWCASE
        ========================================================================== */
@@ -144,6 +154,7 @@
       margin: 0 auto;
     }
 
+    /* Hardware Figure Showcase Card (Hero Render 4) */
     .hero-showcase {
       max-width: var(--max-width);
       margin: 2rem auto 4rem auto;
@@ -162,12 +173,20 @@
     .showcase-card img {
       width: 100%;
       height: auto;
-      max-height: 520px;
+      max-height: 560px;
       object-fit: contain;
       border-radius: var(--radius-lg);
       background: #ffffff;
       box-shadow: var(--shadow-card);
-      margin-bottom: 1rem;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .showcase-caption {
+      margin-top: 1.2rem;
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      font-weight: 500;
     }
 
     /* ==========================================================================
@@ -757,7 +776,6 @@
       line-height: 1.48;
     }
 
-    /* Auto-wrapping Render Gallery Grid (Handles 3, 6, 12+ renders cleanly) */
     .render-gallery-box {
       background: #ffffff;
       border-radius: var(--radius-lg);
@@ -1004,12 +1022,13 @@
     </p>
   </section>
 
-  <!-- Figure Showcase (Vision Schematic) -->
+  <!-- Flagship Landing Page Hardware Showcase (Render 4) -->
   <div class="hero-showcase">
     <div class="showcase-card">
-      <img src="assets/Complee Sketch.png" alt="Complee Initial System Vision Schematic">
-      <img src="assets/Sketch2.png" alt="sketch 2">
-      <img src="assets/sketch3.jpg" alt="sketch 3">
+      <img src="assets/render4.png" alt="Complee Elevated Countertop Prep Station Render 4">
+      <div class="showcase-caption">
+        Complee — Elevated All-in-One Countertop Prep Station with Magnetic Waste Trays, Modular Containers &amp; Integrated Knife Storage
+      </div>
     </div>
   </div>
 
@@ -1470,12 +1489,12 @@
       <div class="render-gallery-box">
         <div class="render-gallery-header">
           <div>
-            <h3>3D CAD Renders & Prototype Gallery</h3>
+            <h3>3D CAD Renders & Initial Concept Sketches</h3>
             <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 0.2rem;">
-              Multi-angle hardware renders exploring station elevation, magnetic side trays, modular containers, and knife storage.
+              Multi-angle hardware renders and early orthographic sketches exploring station elevation, magnetic side trays, modular containers, and knife storage.
             </p>
           </div>
-          <span class="render-hint">Click any render to inspect fullscreen</span>
+          <span class="render-hint">Click any image to inspect fullscreen</span>
         </div>
 
         <div class="render-grid" id="renderGrid">
@@ -1486,7 +1505,7 @@
               <span>Render 01 • Isometric View</span>
               <small style="font-weight: 400; margin-top: 0.25rem;">Save as assets/render1.png</small>
             </div>
-            <div class="render-caption"><strong>01. </strong> ... </div>
+            <div class="render-caption"><strong>01. All-in-One Isometric View:</strong> Elevated prep deck with integrated storage bays.</div>
           </div>
 
           <!-- Render 2 -->
@@ -1496,7 +1515,7 @@
               <span>Render 02 • Magnetic Trays</span>
               <small style="font-weight: 400; margin-top: 0.25rem;">Save as assets/render2.png</small>
             </div>
-            <div class="render-caption"><strong>02. </strong> ... </div>
+            <div class="render-caption"><strong>02. Magnetic Side Waste Trays:</strong> Snap-on scrap trays for zero-mess sweeping and dumping.</div>
           </div>
 
           <!-- Render 3 -->
@@ -1506,17 +1525,17 @@
               <span>Render 03 • Modular Containers</span>
               <small style="font-weight: 400; margin-top: 0.25rem;">Save as assets/render3.png</small>
             </div>
-            <div class="render-caption"><strong>03. </strong> ... </div>
+            <div class="render-caption"><strong>03. Modular Prep Containers:</strong> All-in-one microwave, oven, and storage-safe bins.</div>
           </div>
 
           <!-- Render 4 -->
           <div class="render-card" onclick="openLightbox(3)">
-            <img src="assets/render4.png" alt="Integrated Knife Holder" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <img src="assets/render4.png" alt="Hero Station & Integrated Knife Holder" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <div class="render-placeholder" style="display: none;">
-              <span>Render 04 • Knife Holder</span>
+              <span>Render 04 • Flagship View</span>
               <small style="font-weight: 400; margin-top: 0.25rem;">Save as assets/render4.png</small>
             </div>
-            <div class="render-caption"><strong>04. </strong> ... </div>
+            <div class="render-caption"><strong>04. Flagship Station Overview:</strong> Complete elevated assembly with knife slot and trays.</div>
           </div>
 
           <!-- Render 5 -->
@@ -1526,7 +1545,7 @@
               <span>Render 05 • Exploded View</span>
               <small style="font-weight: 400; margin-top: 0.25rem;">Save as assets/render5.png</small>
             </div>
-            <div class="render-caption"><strong>05. </strong> ... </div>
+            <div class="render-caption"><strong>05. Exploded Component Architecture:</strong> Detachable board and modular sub-assemblies.</div>
           </div>
 
           <!-- Render 6 -->
@@ -1536,7 +1555,25 @@
               <span>Render 06 • Kitchen Context</span>
               <small style="font-weight: 400; margin-top: 0.25rem;">Save as assets/render6.png</small>
             </div>
-            <div class="render-caption"><strong>06. </strong> ... </div>
+            <div class="render-caption"><strong>06. Countertop Environment Fit:</strong> Elevated footprint in a shared apartment kitchen.</div>
+          </div>
+
+          <!-- Early Concept Sketch 1 -->
+          <div class="render-card" onclick="openLightbox(6)">
+            <img src="assets/Complee Sketch.png" alt="Complee Initial System Vision Schematic">
+            <div class="render-caption"><strong>Sketch 01. Initial Vision Schematic:</strong> Countertop prep station enhancement &amp; material callouts.</div>
+          </div>
+
+          <!-- Early Concept Sketch 2 -->
+          <div class="render-card" onclick="openLightbox(7)">
+            <img src="assets/Sketch2.png" alt="Top & Side Orthographic Dimensions">
+            <div class="render-caption"><strong>Sketch 02. Orthographic Dimensions:</strong> Top &amp; side magnetic edge-attachment clearance.</div>
+          </div>
+
+          <!-- Early Concept Sketch 3 -->
+          <div class="render-card" onclick="openLightbox(8)">
+            <img src="assets/sketch3.jpg" alt="Sliding Countertop & Detachable Bin Sketch">
+            <div class="render-caption"><strong>Sketch 03. Mechanism Detail:</strong> Sliding seam &amp; machine-washable detachable bin.</div>
           </div>
         </div>
       </div>
