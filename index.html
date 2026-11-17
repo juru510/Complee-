@@ -15,6 +15,7 @@
       --bg-card: #ffffff;
       --accent-blue: #0071e3;
       --accent-blue-hover: #0077ed;
+      --accent-green: #2e7d32;
       
       --text-primary: #1d1d1f;
       --text-secondary: #6e6e73;
@@ -73,6 +74,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
     }
 
     .brand-logo {
@@ -81,35 +83,28 @@
       color: var(--text-primary);
       text-decoration: none;
       letter-spacing: -0.03em;
+      flex-shrink: 0;
     }
 
     nav ul {
       display: flex;
+      flex-wrap: wrap;
       list-style: none;
-      gap: 1.4rem;
+      gap: 0.95rem;
       align-items: center;
+      justify-content: flex-end;
     }
 
     nav a {
       color: var(--text-secondary);
       text-decoration: none;
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       font-weight: 500;
       transition: color 0.15s ease;
     }
 
     nav a:hover {
       color: var(--text-primary);
-    }
-
-    .nav-cta {
-      background-color: var(--accent-blue);
-      color: #ffffff;
-      padding: 0.35rem 0.85rem;
-      border-radius: var(--radius-pill);
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-decoration: none;
     }
 
     /* ==========================================================================
@@ -149,7 +144,6 @@
       margin: 0 auto;
     }
 
-    /* Hardware Figure Showcase Card */
     .hero-showcase {
       max-width: var(--max-width);
       margin: 2rem auto 4rem auto;
@@ -174,13 +168,6 @@
       background: #ffffff;
       box-shadow: var(--shadow-card);
       margin-bottom: 1rem;
-    }
-
-    .showcase-caption {
-      margin-top: 1.2rem;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      font-weight: 500;
     }
 
     /* ==========================================================================
@@ -557,7 +544,7 @@
     .responsive-iframe-container {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
       border-radius: var(--radius-lg);
@@ -601,7 +588,330 @@
       transform: translateY(-1px);
     }
 
-    /* 09: COLLABORATIVE PLAN TABLE */
+    /* ==========================================================================
+       09: VALUE PROPOSITION CANVAS (CUSTOMER–VALUE FIT)
+       ========================================================================== */
+    .vpc-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .vpc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: stretch;
+    }
+
+    .vpc-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .vpc-header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-pill);
+      width: fit-content;
+      margin-bottom: 0.3rem;
+    }
+
+    .vpc-header-badge.vp {
+      background: rgba(0, 113, 227, 0.1);
+      color: var(--accent-blue);
+    }
+
+    .vpc-header-badge.cp {
+      background: rgba(46, 125, 50, 0.1);
+      color: var(--accent-green);
+    }
+
+    .vpc-subcard {
+      background: var(--bg-section);
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.25rem;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .vpc-subcard h4 {
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .vpc-subcard ul, .vpc-subcard ol {
+      padding-left: 1.2rem;
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .vpc-subcard li {
+      margin-bottom: 0.35rem;
+    }
+
+    .rank-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      background: rgba(0, 113, 227, 0.1);
+      padding: 0.1rem 0.45rem;
+      border-radius: 5px;
+      margin-right: 0.35rem;
+    }
+
+    .vpc-fit-banner {
+      background: linear-gradient(135deg, rgba(0, 113, 227, 0.06), rgba(46, 125, 50, 0.06));
+      border: 1px solid rgba(0, 113, 227, 0.18);
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 1.8rem;
+    }
+
+    .vpc-fit-banner h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.8rem;
+    }
+
+    .fit-matrix-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border-light);
+      font-size: 0.86rem;
+    }
+
+    .fit-matrix-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .fit-arrow {
+      font-weight: 700;
+      color: var(--accent-blue);
+      background: #ffffff;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      box-shadow: var(--shadow-soft);
+      white-space: nowrap;
+    }
+
+    /* ==========================================================================
+       10: PROTOTYPING PROCESS & RENDER GALLERY
+       ========================================================================== */
+    .proto-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .proto-step-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .proto-step-num {
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      background: rgba(0, 113, 227, 0.08);
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-pill);
+      width: fit-content;
+    }
+
+    .proto-step-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .proto-step-card p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.48;
+    }
+
+    /* Auto-wrapping Render Gallery Grid (Handles 3, 6, 12+ renders cleanly) */
+    .render-gallery-box {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.6rem;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 1.5rem;
+    }
+
+    .render-gallery-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .render-hint {
+      font-size: 0.78rem;
+      color: var(--accent-blue);
+      font-weight: 600;
+      background: rgba(0, 113, 227, 0.08);
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-pill);
+    }
+
+    .render-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .render-card {
+      background: var(--bg-section);
+      border-radius: var(--radius-md);
+      padding: 0.75rem;
+      border: 1px solid var(--border-subtle);
+      cursor: zoom-in;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .render-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-card);
+      border-color: rgba(0, 113, 227, 0.25);
+    }
+
+    .render-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #ffffff;
+      display: block;
+    }
+
+    .render-placeholder {
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+      background: linear-gradient(145deg, #ffffff, #f0f0f5);
+      border: 1px dashed rgba(0, 0, 0, 0.16);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0.8rem;
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      font-weight: 600;
+    }
+
+    .render-caption {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.35;
+    }
+
+    /* Fullscreen Lightbox Modal */
+    .lightbox-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(15, 15, 18, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .lightbox-overlay.active {
+      display: flex;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 76vh;
+      object-fit: contain;
+      border-radius: var(--radius-lg);
+      background: #ffffff;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-caption {
+      color: #f5f5f7;
+      font-size: 0.92rem;
+      text-align: center;
+      max-width: 680px;
+    }
+
+    .lightbox-controls {
+      display: flex;
+      gap: 0.8rem;
+      align-items: center;
+    }
+
+    .lb-btn {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 0.5rem 1.1rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+
+    .lb-btn:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    /* 11: PROJECT PLAN TABLE */
+    .table-responsive {
+      overflow-x: auto;
+    }
+
     .plan-table {
       width: 100%;
       border-collapse: collapse;
@@ -646,7 +956,9 @@
     }
 
     @media (max-width: 860px) {
-      .laddering-grid { grid-template-columns: 1fr; }
+      .laddering-grid, .vpc-grid { grid-template-columns: 1fr; }
+      .fit-matrix-row { grid-template-columns: 1fr; text-align: left; }
+      .fit-arrow { width: fit-content; }
     }
 
     @media (max-width: 768px) {
@@ -654,7 +966,7 @@
       .persona-profile { border-right: none; border-bottom: 1px solid var(--border-light); padding-bottom: 1rem; }
       .stat-hero-card { flex-direction: column; text-align: center; gap: 1rem; }
       .scope-grid { grid-template-columns: 1fr; }
-      nav ul { gap: 0.8rem; }
+      nav ul { gap: 0.75rem; }
       .apple-section { padding: 1.8rem; }
     }
   </style>
@@ -674,7 +986,9 @@
           <li><a href="#persona">Persona</a></li>
           <li><a href="#laddering">Laddering</a></li>
           <li><a href="#matrix">Matrix</a></li>
-          <li><a href="#presentation">Presentation</a></li>
+          <li><a href="#presentation">Slides</a></li>
+          <li><a href="#vpc">VPC</a></li>
+          <li><a href="#prototyping">Prototype</a></li>
           <li><a href="#plan">Plan</a></li>
         </ul>
       </nav>
@@ -862,12 +1176,10 @@
       <h2>User Persona</h2>
       
       <div class="bento-card persona-grid">
-        <!-- Left Column: Photo & Full Demographics -->
         <div class="persona-profile">
           <img src="assets/Persona.png" alt="Olivia Wanderbilt Persona">
           <h3>Olivia Wanderbilt</h3>
           
-          <!-- Complete Demographics List -->
           <div class="persona-demographics">
             <div class="demo-row"><span>Age</span> <strong>28 Years Old</strong></div>
             <div class="demo-row"><span>Location</span> <strong>Berkeley, CA</strong></div>
@@ -880,7 +1192,6 @@
           </div>
         </div>
 
-        <!-- Right Column: Details -->
         <div class="persona-details">
           <h4>Background</h4>
           <ul>
@@ -912,7 +1223,6 @@
       <h2>Abstract Laddering</h2>
       
       <div class="laddering-grid">
-        <!-- Left Column: Image Card -->
         <div class="bento-card ladder-image-card">
           <img src="assets/abstract laddering.png" alt="Abstract Laddering Diagram Tree">
           <p style="font-size: 0.8rem; color: var(--text-secondary); text-align: center; margin: 0;">
@@ -920,9 +1230,7 @@
           </p>
         </div>
 
-        <!-- Right Column: Text Breakdown Cards -->
         <div class="ladder-container">
-          <!-- WHY (Need) -->
           <div class="bento-card ladder-step">
             <span class="ladder-level why">WHY (Need)</span>
             <div class="ladder-content">
@@ -931,7 +1239,6 @@
             </div>
           </div>
 
-          <!-- WHAT (System) -->
           <div class="bento-card ladder-step">
             <span class="ladder-level what">WHAT (System)</span>
             <div class="ladder-content">
@@ -940,7 +1247,6 @@
             </div>
           </div>
 
-          <!-- HOW (Solution) -->
           <div class="bento-card ladder-step">
             <span class="ladder-level how">HOW (Solution)</span>
             <div class="ladder-content">
@@ -958,7 +1264,6 @@
       <h2>Final Creative Matrix</h2>
       
       <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-        <!-- Raw Brainstorm Board Image Card -->
         <div class="bento-card ladder-image-card">
           <img src="assets/matrix.png" alt="Complee Wk9 Workshop Creative Matrix Board">
           <p style="font-size: 0.82rem; color: var(--text-secondary); text-align: center; margin-top: 0.5rem; margin-bottom: 0;">
@@ -966,7 +1271,6 @@
           </p>
         </div>
 
-        <!-- Synthesized Key Takeaways Table -->
         <div class="bento-card" style="padding: 1.5rem; overflow-x: auto;">
           <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
             <thead>
@@ -1002,17 +1306,15 @@
       <h2>Project Presentation File</h2>
 
       <div class="bento-card" style="padding: 1.8rem;">
-        <!-- Responsive 16:9 Embedded Google Slides Deck -->
         <div class="responsive-iframe-container">
           <iframe 
-            src="https://docs.google.com/presentation/d/1uP_6Id0ZLF6jJaE99wF4KrtuT_hMOzP3YXIEq0TpdRI/edit?usp=sharing" 
+            src="https://docs.google.com/presentation/d/1uP_6Id0ZLF6jJaE99wF4KrtuT_hMOzP3YXIEq0TpdRI/embed?start=false&loop=false&delayms=3000" 
             allowfullscreen="true" 
             mozallowfullscreen="true" 
             webkitallowfullscreen="true">
           </iframe>
         </div>
 
-        <!-- Fallback Direct Link Button -->
         <div class="presentation-actions">
           <a href="https://docs.google.com/presentation/d/1uP_6Id0ZLF6jJaE99wF4KrtuT_hMOzP3YXIEq0TpdRI/edit?usp=sharing" target="_blank" rel="noopener" class="pres-cta-btn">
             Open Presentation in Google Slides ↗
@@ -1021,25 +1323,267 @@
       </div>
     </section>
 
-    <!-- 09: COLLABORATIVE PLAN -->
+    <!-- 09: VALUE PROPOSITION CANVAS (CUSTOMER–VALUE FIT) -->
+    <section class="apple-section" id="vpc">
+      <span class="section-eyebrow">09 / Strategic Alignment</span>
+      <h2>Value Proposition Canvas</h2>
+      
+      <div class="vpc-wrapper">
+        <!-- Uploaded VPC Board Image Card (Save ValueProp.png.pdf as assets/vpc.png) -->
+        <div class="bento-card ladder-image-card" id="vpc-diagram-box">
+          <img src="assets/vpc.png" alt="Complee Value Proposition Canvas & Priority Ranking" onerror="document.getElementById('vpc-diagram-box').style.display='none';">
+          <p style="font-size: 0.82rem; color: var(--text-secondary); text-align: center; margin: 0;">
+            Figure: Complee Value Proposition Canvas & Feature Priority Ranking
+          </p>
+        </div>
+
+        <!-- Two-Sided Canvas Architecture -->
+        <div class="vpc-grid">
+          <!-- Left Side: Value Proposition (Exact Sticky Notes + Importance Ranking) -->
+          <div class="bento-card vpc-column">
+            <span class="vpc-header-badge vp">Value Proposition • Complee Station</span>
+            <h3>Products, Pain Relievers & Gain Creators</h3>
+
+            <div class="vpc-subcard">
+              <h4>Products & Services (Ranked by Importance)</h4>
+              <ol>
+                <li><span class="rank-tag">#1</span><strong>All-in-one cooking station</strong> elevated from the countertop</li>
+                <li><span class="rank-tag">#2</span><strong>Cutting board</strong> integrated prep deck</li>
+                <li><span class="rank-tag">#3</span><strong>Food containers &amp; bins</strong> (plus scrap disposal container)</li>
+                <li><span class="rank-tag">#4</span><strong>Modular design</strong> for flexible kitchen layouts</li>
+                <li><span class="rank-tag">#5</span><strong>Knife holder</strong> built directly into the station</li>
+              </ol>
+            </div>
+
+            <div class="vpc-subcard">
+              <h4>Pain Relievers (Top Ranked &amp; Core)</h4>
+              <ul>
+                <li><span class="rank-tag">#1</span><strong>Less stress</strong> &amp; <span class="rank-tag">#2</span><strong>Less clutter</strong> in the kitchen space</li>
+                <li><span class="rank-tag">#3</span><strong>Less crumbs/spills on the countertop</strong> via magnetic side waste trays</li>
+                <li><strong>Fast Clean-Up &amp; Zero Odor:</strong> Dump trays straight into trash and wash the board</li>
+                <li><strong>No Weird Textures:</strong> Fully washable prep board eliminates sticky surface residue</li>
+                <li><strong>Zero Shared-Space Friction:</strong> Portable, easy-to-clean board you can take to your room</li>
+              </ul>
+            </div>
+
+            <div class="vpc-subcard">
+              <h4>Gain Creators (Top Ranked &amp; Core)</h4>
+              <ul>
+                <li><span class="rank-tag">#1</span><strong>Speed and efficiency</strong> through a clean, aesthetically pleasing workflow</li>
+                <li><span class="rank-tag">#2</span><strong>Organize prepped groceries easily</strong> in dedicated containers</li>
+                <li><strong>All-in-One Cook-Safe Tupperware:</strong> Microwaveable, oven-safe, and storage-ready</li>
+                <li><strong>Good Hygiene &amp; Peace of Mind:</strong> Less clutter and a more pleasant cooking experience</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right Side: Customer Profile (Olivia Wanderbilt) -->
+          <div class="bento-card vpc-column">
+            <span class="vpc-header-badge cp">Customer Profile • Olivia Wanderbilt</span>
+            <h3>Target Household Segment</h3>
+
+            <div class="vpc-subcard">
+              <h4>Customer Jobs</h4>
+              <ul>
+                <li>Cook nutritious, budget-conscious meals at home on weeknights</li>
+                <li>Prep and organize multi-ingredient recipes without cluttering shared counters</li>
+                <li>Maintain a sanitized kitchen in a shared apartment environment</li>
+              </ul>
+            </div>
+
+            <div class="vpc-subcard">
+              <h4>Customer Pains</h4>
+              <ul>
+                <li>Crumbs and food scraps falling into countertop seams and onto the floor</li>
+                <li>Unpleasant, sticky textures remaining on countertop surfaces</li>
+                <li>Post-cooking cleanup stress (<em>"70% is easy, 100% is too hard daily"</em>)</li>
+                <li>Shared apartment counter clutter and lingering food odors</li>
+              </ul>
+            </div>
+
+            <div class="vpc-subcard">
+              <h4>Customer Gains</h4>
+              <ul>
+                <li>Faster prep-to-plate speed with organized, ready-to-cook ingredients</li>
+                <li>Clean, hygienic, aesthetically pleasing workspace with minimal scrubbing</li>
+                <li>Peace of mind and free evening time to sustain healthy home cooking</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customer-Value Fit Bridge -->
+        <div class="vpc-fit-banner">
+          <h4>Customer–Value Fit: Direct Alignment Mapping</h4>
+          <div class="fit-matrix-row">
+            <div><strong>Pain:</strong> Crumbs/spills on counter &amp; slow post-meal cleanup</div>
+            <span class="fit-arrow">FIT →</span>
+            <div><strong>Reliever:</strong> Magnetic side waste trays catch scraps on contact—just lift and dump into trash</div>
+          </div>
+          <div class="fit-matrix-row">
+            <div><strong>Pain:</strong> Sticky surface textures, odors &amp; shared-apartment friction</div>
+            <span class="fit-arrow">FIT →</span>
+            <div><strong>Reliever:</strong> Elevated, portable cutting board detaches for full sink washing or room storage</div>
+          </div>
+          <div class="fit-matrix-row">
+            <div><strong>Gain:</strong> Speed, efficiency &amp; clutter-free ingredient prep</div>
+            <span class="fit-arrow">FIT →</span>
+            <div><strong>Creator:</strong> All-in-one station with knife holder + oven/microwave/storage-safe prep containers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10: PROTOTYPING PROCESS & CAD RENDERS -->
+    <section class="apple-section" id="prototyping">
+      <span class="section-eyebrow">10 / Engineering & Iteration</span>
+      <h2>Prototyping Process</h2>
+
+      <!-- 4-Stage Iterative Process Cards -->
+      <div class="proto-steps-grid">
+        <div class="proto-step-card">
+          <span class="proto-step-num">STAGE 01</span>
+          <h4>Dimensional & Ergonomic Mockup</h4>
+          <p>Validated elevated countertop footprint, knife slot ergonomics, and side tray reach angles using orthographic sketches and physical cardboard mockups.</p>
+        </div>
+
+        <div class="proto-step-card">
+          <span class="proto-step-num">STAGE 02</span>
+          <h4>Parametric 3D CAD & Renders</h4>
+          <p>Modeled the elevated station, magnetic waste tray docking rails, integrated knife holder, and modular cook-safe container bays in 3D CAD.</p>
+        </div>
+
+        <div class="proto-step-card">
+          <span class="proto-step-num">STAGE 03</span>
+          <h4>Makerspace Fabrication</h4>
+          <p>Laser-cut wood/acrylic structural decks paired with 3D-printed modular brackets, magnetic tray mounts, and removable waste/prep containers.</p>
+        </div>
+
+        <div class="proto-step-card">
+          <span class="proto-step-num">STAGE 04</span>
+          <h4>Usability & Washability Testing</h4>
+          <p>Tested magnetic tray detachment speed, cutting stability on the elevated deck, and portability for sink washing in shared apartment kitchens.</p>
+        </div>
+      </div>
+
+      <!-- Scalable Render Showcase Grid (Click any render for fullscreen gallery) -->
+      <div class="render-gallery-box">
+        <div class="render-gallery-header">
+          <div>
+            <h3>3D CAD Renders & Prototype Gallery</h3>
+            <p style="font-size: 0.84rem; color: var(--text-secondary); margin-top: 0.2rem;">
+              Multi-angle hardware renders exploring station elevation, magnetic side trays, modular containers, and knife storage.
+            </p>
+          </div>
+          <span class="render-hint">Click any render to inspect fullscreen</span>
+        </div>
+
+        <div class="render-grid" id="renderGrid">
+          <!-- Render 1 -->
+          <div class="render-card" onclick="openLightbox(0)">
+            <img src="assets/render1.png" alt="Complee Isometric Station Render" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="render-placeholder" style="display: none;">
+              <span>Render 01 • Isometric View</span>
+              <small style="font-weight: 400; margin-top: 0.25rem;">Save as assets/render1.png</small>
+            </div>
+            <div class="render-caption"><strong>01. </strong> ... </div>
+          </div>
+
+          <!-- Render 2 -->
+          <div class="render-card" onclick="openLightbox(1)">
+            <img src="assets/render2.png" alt="Magnetic Waste Trays Detail" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="render-placeholder" style="display: none;">
+              <span>Render 02 • Magnetic Trays</span>
+              <small style="font-weight: 400; margin-top: 0.25rem;">Save as assets/render2.png</small>
+            </div>
+            <div class="render-caption"><strong>02. </strong> ... </div>
+          </div>
+
+          <!-- Render 3 -->
+          <div class="render-card" onclick="openLightbox(2)">
+            <img src="assets/render3.png" alt="Modular Food Containers & Bins" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="render-placeholder" style="display: none;">
+              <span>Render 03 • Modular Containers</span>
+              <small style="font-weight: 400; margin-top: 0.25rem;">Save as assets/render3.png</small>
+            </div>
+            <div class="render-caption"><strong>03. </strong> ... </div>
+          </div>
+
+          <!-- Render 4 -->
+          <div class="render-card" onclick="openLightbox(3)">
+            <img src="assets/render4.png" alt="Integrated Knife Holder" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="render-placeholder" style="display: none;">
+              <span>Render 04 • Knife Holder</span>
+              <small style="font-weight: 400; margin-top: 0.25rem;">Save as assets/render4.png</small>
+            </div>
+            <div class="render-caption"><strong>04. </strong> ... </div>
+          </div>
+
+          <!-- Render 5 -->
+          <div class="render-card" onclick="openLightbox(4)">
+            <img src="assets/render5.png" alt="Exploded Assembly View" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="render-placeholder" style="display: none;">
+              <span>Render 05 • Exploded View</span>
+              <small style="font-weight: 400; margin-top: 0.25rem;">Save as assets/render5.png</small>
+            </div>
+            <div class="render-caption"><strong>05. </strong> ... </div>
+          </div>
+
+          <!-- Render 6 -->
+          <div class="render-card" onclick="openLightbox(5)">
+            <img src="assets/render6.png" alt="In-Context Countertop Render" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="render-placeholder" style="display: none;">
+              <span>Render 06 • Kitchen Context</span>
+              <small style="font-weight: 400; margin-top: 0.25rem;">Save as assets/render6.png</small>
+            </div>
+            <div class="render-caption"><strong>06. </strong> ... </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key Prototyping Learnings & Iterations Box -->
+      <div class="bento-card">
+        <h3 style="margin-bottom: 0.8rem;">Key Findings & Design Iterations</h3>
+        <div class="scope-grid">
+          <div class="scope-card in">
+            <h4>What Worked Well</h4>
+            <ul>
+              <li>Magnetic side waste trays detach one-handed for instant trash dumping</li>
+              <li>Elevated deck keeps prep ingredients organized directly beneath the board</li>
+              <li>Portable board size fits standard apartment sinks for easy washing</li>
+            </ul>
+          </div>
+          <div class="scope-card" style="border-left: 3px solid var(--accent-blue); padding-left: 1rem;">
+            <h4 style="color: var(--accent-blue);">Iterations Made</h4>
+            <ul>
+              <li>Strengthened magnetic alignment guides so trays seat flush without gaps</li>
+              <li>Standardized container bays to fit microwave/oven-safe prep Tupperware</li>
+              <li>Added non-slip base pads to eliminate wobble during heavy chopping</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11: PROJECT PLAN -->
     <section class="apple-section" id="plan">
-      <span class="section-eyebrow">09 / Team Execution</span>
-      <h2>Collaborative Plan</h2>
+      <span class="section-eyebrow">11 / Execution Roadmap</span>
+      <h2>Project Plan</h2>
       
       <!-- Principles Card -->
       <div class="bento-card" style="margin-bottom: 1.5rem;">
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem;">
           <div>
-            <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--accent-blue); margin-bottom: 0.4rem;">Team Goals</h4>
-            <p style="font-size: 0.88rem; color: var(--text-secondary);">Create a working product to help users easily clean cooking messes in the kitchen while learning the human-centered design process.</p>
+            <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--accent-blue); margin-bottom: 0.4rem;">Project Objectives</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">Create a working all-in-one prep station to help users easily clean cooking messes while validating fit through human-centered design.</p>
           </div>
           <div>
             <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--accent-blue); margin-bottom: 0.4rem;">Procedures & Decision Making</h4>
             <p style="font-size: 0.88rem; color: var(--text-secondary);">Democratic decision-making; asynchronous and live collaboration via Group Chat, Shared Google Drive, Email, and Zoom.</p>
           </div>
           <div>
-            <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--accent-blue); margin-bottom: 0.4rem;">Team Diversity Synergy</h4>
-            <p style="font-size: 0.88rem; color: var(--text-secondary);">3 engineering majors (ME & IEOR) supply technical expertise; 2 cognitive science majors offer human experience insight.</p>
+            <h4 style="font-size: 0.85rem; text-transform: uppercase; color: var(--accent-blue); margin-bottom: 0.4rem;">Team Diversity & Risk Mitigation</h4>
+            <p style="font-size: 0.88rem; color: var(--text-secondary);">3 engineering majors (ME & IEOR) lead CAD & Makerspace fabrication in parallel; 2 cognitive science majors lead UX, VPC fit & testing.</p>
           </div>
         </div>
       </div>
@@ -1058,38 +1602,45 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>1. Scoping & Setup</strong></td>
-              <td>Problem formulation, Gallup citations, site framework</td>
+              <td><strong>1. Scoping & Problem Framing</strong></td>
+              <td>Problem statement, Gallup/Appetite citations, initial site architecture</td>
               <td>All Members</td>
               <td>Week 8 (10/20)</td>
               <td><span class="status-pill done">Completed</span></td>
             </tr>
             <tr>
-              <td><strong>2. User Discovery</strong></td>
-              <td>Persona modeling & abstract laddering (Wk8)</td>
+              <td><strong>2. User Discovery & Laddering</strong></td>
+              <td>Olivia Wanderbilt persona, HMW framework & abstract laddering tree</td>
               <td>Juan & Lars</td>
               <td>Week 9 (10/27)</td>
               <td><span class="status-pill done">Completed</span></td>
             </tr>
             <tr>
-              <td><strong>3. Creative Matrix</strong></td>
-              <td>Synthesis matrix & enabler evaluation (Wk9)</td>
-              <td>Tala, James & Dylan</td>
+              <td><strong>3. Creative Matrix & Slides</strong></td>
+              <td>Synthesis matrix, sketches & Wk9 presentation deck</td>
+              <td>Tala, James & Juan</td>
               <td>Week 10 (11/3)</td>
               <td><span class="status-pill done">Completed</span></td>
             </tr>
             <tr>
-              <td><strong>4. CAD & Prototype</strong></td>
-              <td>Makerspace slider mechanism & component fabrication</td>
-              <td>Dylan & James</td>
+              <td><strong>4. VPC & 3D CAD Renders</strong></td>
+              <td>Value Proposition Canvas priority ranking & multi-angle CAD renders</td>
+              <td>Juan, Lars & Dylan</td>
               <td>Week 11 (11/10)</td>
+              <td><span class="status-pill done">Completed</span></td>
+            </tr>
+            <tr>
+              <td><strong>5. Makerspace Prototype</strong></td>
+              <td>Elevated deck fabrication, magnetic trays, containers & knife holder</td>
+              <td>Dylan & James</td>
+              <td>Week 12 (11/17)</td>
               <td><span class="status-pill active">In Progress</span></td>
             </tr>
             <tr>
-              <td><strong>5. Evaluation & Pitch</strong></td>
-              <td>Product testing, site updates, and final presentation</td>
+              <td><strong>6. Evaluation & Final Pitch</strong></td>
+              <td>Usability testing, design iterations, final web update & demo</td>
               <td>All Members</td>
-              <td>Week 12 (11/17)</td>
+              <td>Week 13 (11/24)</td>
               <td><span class="status-pill upcoming">Upcoming</span></td>
             </tr>
           </tbody>
@@ -1102,6 +1653,70 @@
   <footer>
     <p>&copy; 2026 Complee Project Team | Course Web Page Assignment & Update</p>
   </footer>
+
+  <!-- Fullscreen Lightbox Modal for CAD Renders -->
+  <div class="lightbox-overlay" id="renderLightbox" onclick="if(event.target === this) closeLightbox()">
+    <div class="lightbox-content">
+      <img id="lightboxImg" src="" alt="Expanded Render">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+      <div class="lightbox-controls">
+        <button class="lb-btn" onclick="stepLightbox(-1)">← Prev</button>
+        <button class="lb-btn" onclick="closeLightbox()">Close (Esc)</button>
+        <button class="lb-btn" onclick="stepLightbox(1)">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentRenderIndex = 0;
+
+    function getRenderItems() {
+      const cards = Array.from(document.querySelectorAll('#renderGrid .render-card'));
+      return cards.map(card => {
+        const img = card.querySelector('img');
+        const cap = card.querySelector('.render-caption');
+        return {
+          src: img && img.style.display !== 'none' ? img.src : '',
+          caption: cap ? cap.innerHTML : ''
+        };
+      });
+    }
+
+    function openLightbox(index) {
+      const items = getRenderItems();
+      if (!items[index] || !items[index].src) return;
+      currentRenderIndex = index;
+      document.getElementById('lightboxImg').src = items[index].src;
+      document.getElementById('lightboxCaption').innerHTML = items[index].caption;
+      document.getElementById('renderLightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('renderLightbox').classList.remove('active');
+    }
+
+    function stepLightbox(dir) {
+      const items = getRenderItems().filter(item => item.src);
+      if (!items.length) return;
+      const all = getRenderItems();
+      let next = currentRenderIndex;
+      for (let i = 0; i < all.length; i++) {
+        next = (next + dir + all.length) % all.length;
+        if (all[next].src) {
+          openLightbox(next);
+          break;
+        }
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      const lb = document.getElementById('renderLightbox');
+      if (!lb.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') stepLightbox(1);
+      if (e.key === 'ArrowLeft') stepLightbox(-1);
+    });
+  </script>
 
 </body>
 </html>
